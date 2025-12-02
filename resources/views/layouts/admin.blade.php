@@ -87,7 +87,7 @@
                     @if(auth()->check())
                         @if(auth()->user()->role === 'casemix')
                             <li class="nav-item d-none d-md-block">
-                                <a href="{{ route('casemix.dashboard') }}" class="nav-link">Home</a>
+                                <a href="{{ route('casemix.index') }}" class="nav-link">Home</a>
                             </li>
                         @elseif(auth()->user()->role === 'keuangan')
                             <li class="nav-item d-none d-md-block">
@@ -177,7 +177,7 @@
                 <!--begin::Brand Link-->
                 <a href="@if(auth()->check())
                             @if(auth()->user()->role === 'casemix')
-                                {{ route('casemix.dashboard') }}
+                                {{ route('casemix.index') }}
                             @elseif(auth()->user()->role === 'keuangan')
                                 {{ route('keuangan.dashboard') }}
                             @else
@@ -252,7 +252,7 @@
                         <!-- Dashboard Casemix - HANYA UNTUK CASEMIX & ADMIN -->
                         @if(auth()->check() && auth()->user()->role !== 'keuangan')
                         <li class="nav-item">
-                            <a href="{{ route('casemix.dashboard') }}" class="nav-link {{ Request::routeIs('casemix.dashboard') ? 'active' : '' }}">
+                            <a href="{{ route('casemix.index') }}" class="nav-link {{ Request::routeIs('casemix.dashboard') ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-bar-chart"></i>
                                 <p>Dashboard Casemix</p>
                             </a>

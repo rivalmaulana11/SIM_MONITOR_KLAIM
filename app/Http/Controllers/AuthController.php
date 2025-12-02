@@ -40,7 +40,7 @@ class AuthController extends Controller
             if ($user->isSuperAdmin()) {
                 return redirect()->intended('/admin/dashboard');
             } elseif ($user->isCasemix()) {
-                return redirect()->intended('/casemix/dashboard');
+                return redirect()->intended('/casemix/index');
             } elseif ($user->isKeuangan()) {
                 return redirect()->intended('/keuangan/dashboard');
             }
